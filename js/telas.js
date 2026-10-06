@@ -10,7 +10,7 @@ function telaInicio(){
 function telaQuiz(){
   const p = QUIZ[st.i], a = st.resp[st.i], n = QUIZ.length, lim = brancos() >= BRANCOS_MAX && a !== "branco";
   const k = (v,t,off) => `<button class="tecla ${v} ${a===v?"on":""} ${off?"off":""}" aria-label="Voto ${t}" onclick="responder('${v}')">${t}</button>`;
-  return `<div class="top"><span>Pergunta ${st.i+1} de ${n}</span><span class="mut">Votos em branco: ${brancos()}/${BRANCOS_MAX}</span></div>
+  return `<div class="top"><button class="home" onclick="ir('inicio')" aria-label="Voltar para o início" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></button><span>Pergunta ${st.i+1} de ${n}</span><span class="mut">Votos em branco: ${brancos()}/${BRANCOS_MAX}</span></div>
   <div class="bar"><i style="width:${(st.i+(a?1:0))/n*100}%"></i></div>
   <div class="nav" aria-label="Ir para outra pergunta">${QUIZ.map((_,j)=>`<button class="${st.resp[j]?"feito":""} ${j===st.i?"atual":""}" ${j>st.resp.length?"disabled":""} onclick="irPara(${j})" aria-label="Pergunta ${j+1}">${j+1}</button>`).join("")}</div>
   <div class="card" style="margin-top:16px"><span class="tag">${p.tema}</span><p class="big" style="margin-top:12px">${p.pergunta}</p>
