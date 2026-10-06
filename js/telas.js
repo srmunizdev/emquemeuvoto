@@ -4,6 +4,7 @@ function telaInicio(){
   return `<div class="card"><h1>Em Quem Eu Voto?</h1><p class="big">Descubra com qual candidato suas opiniões estão mais alinhadas.</p>
   <p>Responda ${QUIZ.length} perguntas sobre propostas e posicionamentos. O nome dos candidatos não será mostrado durante o quiz para que suas respostas sejam baseadas apenas no que você pensa.</p>
   <p class="mut">Este teste não indica em quem você deve votar. Ele apenas compara suas respostas com as posições cadastradas dos candidatos.</p>
+  <p class="mut">Este quiz é anônimo e não armazena suas respostas.</p>
   <button class="pri" onclick="st={tela:'quiz',i:0,resp:[]};save();render()">Começar o quiz</button>${retomar}
   <p style="text-align:center"><a href="#" onclick="metodoCompleto=false;ir('metodo');return false">Como funciona?</a></p></div>`;
 }
